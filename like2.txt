@@ -20,7 +20,7 @@
    <p><strong>Динамо</strong> Киев <a href="https://sport.ua/uk/news/572517-dinamo-sygraet-s-sofiyskim-levski" target="_blank" title="Динамо победит">играет</a> с болгарской командой</p>
    <p><a name="2"></a></p>
   <h1 align="center">Международный спорт</h1>
-   <p><img src="https://media.istockphoto.com/photos/tandem-jump-in-paragliding-picture-id1141688597?s=612x612" 
+   <p><img align="center" src="https://media.istockphoto.com/photos/tandem-jump-in-paragliding-picture-id1141688597?s=612x612" 
         alt="Международный спорт"></p>
    <p>Стало известно, что будет <a href="https://sport.ua/news/572509-vadim-guttsayt-esli-v-pekine-2022-ne-budet-ni-odnoy-medali-eto-proval" target="_blank" title="Интересно, что же это">провалом</a> на олимпийских играх</p>
    <p>Каталонская <strong>«Барселона»</strong> на официальном сайте объявила о переходе <a href="https://sport.ua/news/572531-ofitsialno-obameyang-pereshel-v-barselonu" target="_blank" title="Какай-то чувак">габонского форварда</a></p>
