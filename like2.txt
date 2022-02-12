@@ -3,27 +3,44 @@
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>ACLONY</title>
+  <style> 
+    table { 
+     background: white; 
+     color: olive; 
+     border-bottom: 2px solid black; 
+    }
+    header { 
+             color: #ffffff;
+             background: blue;
+             font-size: 1.5em;
+            }
+    footer {
+             color: #ffffff;
+             background: olive;
+    }
+  </style>
  </head>
- <body bgcolor="teal" text="#ffffff">
+ <body>
      <header>
-    <h1>ACLONY - сайт для разностороннего развития личности</h1>
+      <p><a name="top"></a></p>
+     <p align="center" valign="top"><strong>&#9824 &#9827 &#9829 &#9830</strong></p>
+    <h1 align="center" valign="top"><img src="https://image.freepik.com/free-vector/lion-king-logo-esport-gaming-mascot-design_171360-48.jpg" width="50" height="50"> ACLONY - сайт для разностороннего развития личности</h1>
+     <p align="center" valign="top"><strong>&#9824 &#9827 &#9829 &#9830</strong></p>
      </header>
   <table border="0" width="100%" cellpadding="50">
    <tr>
-    <th valign="top"><p><a name="top"></a></p>
-       <p><strong>&#9824 &#9827 &#9829 &#9830</strong></p>
-       <h1></h1>
-       <p><strong>&#9824 &#9827 &#9829 &#9830</strong></p>
+    <th valign="top">
+       <p><img src="https://sostav.ua/app/public/images/news/2018/08/23/qB3V608K_m.jpg" alt="Саморазвитие" width="600" height="400"></p>
     </th>
     <td>
-   <h1>Карта сайта</h1>
+   <h1 align="center" valign="top">Карта сайта</h1>
     <ul type="square"> 
-       <li><p><strong><a href="#1">Спорт Украины</a></strong></p></li>
-       <li><p><strong><a href="#2">Международный спорт</a></strong></p></li>
-       <li><p><strong><a href="#3">Саморазвитие</a></strong></p></li>
-       <li><p><strong><a href="#4">Химия</a></strong></p></li>
-       <li><p><strong><a href="#5">Мир</a></strong></p></li>
-       <li><p><strong><a href="#6">Греческий алфавит</a></strong></p></li>
+       <li><p align="center" valign="top"><strong><a href="#1">Спорт Украины</a></strong></p></li>
+       <li><p align="center" valign="top"><strong><a href="#2">Международный спорт</a></strong></p></li>
+       <li><p align="center" valign="top"><strong><a href="#3">Саморазвитие</a></strong></p></li>
+       <li><p align="center" valign="top"><strong><a href="#4">Химия</a></strong></p></li>
+       <li><p align="center" valign="top"><strong><a href="#5">Мир</a></strong></p></li>
+       <li><p align="center" valign="top"><strong><a href="#6">Греческий алфавит</a></strong></p></li>
     </ul>
     </td>  
    <tr>
@@ -69,7 +86,7 @@
      <p><a name="5"></a></p>
     </td>
   </tr>
-  <tr>   
+  <tr>  
       <td><p><a href="#top">Наверх</a></p>
    <h1 align="center" valign="top">Мир</h1>
      <p align="center"><img src="https://media.istockphoto.com/photos/old-world-map-on-mercators-projection-picture-id187104011" 
@@ -85,11 +102,13 @@
         alt="Алфавит" width="400" height="200"></p></td>
       <td valign="center"><p><a href="file:///C:/Users/Katrine/Desktop/like/Project/My%20project/alphabet.html" target="_blank" title="Крутяк">НАЖМИ СЮДА</a></p>
      </td>
-  </tr>
-  <tr>
-      <td><p><a href="mailto:cebanoleksandr@gmail.com" target="_blank" title="???">Задавайте вопросы по электронной почте</a></p>
-     <p><a href="#top">Наверх</a></p></td>
-  </tr>
+  </tr> 
  </table>
+ <footer>
+     <p><a href="mailto:cebanoleksandr@gmail.com" target="_blank" title="???">Задавайте вопросы по электронной почте</a></p>
+     <p><a href="#top">Наверх</a></p>
+  </footer>
  </body>
 </html>
+
+
