@@ -5,7 +5,7 @@ table {
 }
 
 header {
-    color: red;
+    color: rgb(251, 255, 0);
     background: black;
     font-size: 1.5em;
 }
@@ -14,4 +14,9 @@ footer {
     color: red;
     background: black;
     font-size: 1.5em;
+}
+H1     {background-color: #ff0000;
+}
+B.qaz {
+       margin-left: 30px;
 }
