@@ -1,0 +1,17 @@
+table {
+    background: yellow;
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+header {
+    color: red;
+    background: black;
+    font-size: 1.5em;
+}
+
+footer {
+    color: red;
+    background: black;
+    font-size: 1.5em;
+}
