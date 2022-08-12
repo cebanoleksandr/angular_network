@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './Login.css';
 import { login } from '../redux/auth-reducer';
@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
         })
     }
 
-    render() {
+    render(props) {
         let { 
             login, 
             password,
@@ -39,8 +39,8 @@ class LoginForm extends React.Component {
                     <div className='form__input'>
                         <label>
                           Login:
-                          <Field 
-                            component='input'
+                          <input 
+                            // component='input'
                             name={'email'}
                             type="text" 
                             className={`login ${loginError ? 'is_danger' : ''}`} 
@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
                             placeholder='Login'
                             onChange={(event) => {
                                 this.setState({ login: event.target.value });
-                                // console.log(login);
+                                console.log(login, event.target.value);
                                 if (login.search(/[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/) !== -1) {
                                     this.setState({ loginError: '' });
                                 } else {
