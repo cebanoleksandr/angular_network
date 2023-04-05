@@ -1,0 +1,33 @@
+.nav {
+    grid-area: n;
+    background: var(--primary-color);
+    height: 98%;
+    width: 100%;
+    margin: 10px;    
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+    color: #fff;
+    padding: 0 10px;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    font-size: 1.5rem;
+    transition: .5s;
+
+    &:hover {
+        color: gold;
+        background: #5561ca;
+    }
+}
+
+.active_link {
+    color: var(--success-color);
+    font-weight: bold;
+}

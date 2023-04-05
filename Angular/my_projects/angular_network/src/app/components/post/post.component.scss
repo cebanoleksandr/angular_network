@@ -1,0 +1,25 @@
+.user_data {
+    display: flex;
+}
+
+.user_ava_container {
+    margin-right: 20px;
+}
+
+.user_ava {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.post {
+    padding: 1rem;
+    border: 1px dotted #ccc;
+    margin: 0.7rem auto;
+    width: 80%;
+    transition: .5s;
+
+    &:hover {
+        background: rgb(172, 211, 255);
+    }
+}

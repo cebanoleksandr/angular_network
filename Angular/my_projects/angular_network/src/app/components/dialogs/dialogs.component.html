@@ -1,0 +1,22 @@
+<div class="dialogs">
+    <div class="dialogs_list_container">
+        <app-dialogs-list [dialogs]="dialogs"></app-dialogs-list>
+    </div>
+
+    <div class="messages">
+        <div class="messanger" *ngIf="isMessanger; else chooseDialog">
+            <div class="messages__field">
+                <app-message [message]="message" [image]="image" *ngFor="let message of messages"></app-message>
+            </div>
+    
+            <div class="messages__enter">
+                <textarea placeholder="Write message..." [(ngModel)]="createdMessage"></textarea>
+                <button class="btn btn-dark btn-block" (click)="sendMessage()">Send meaasge</button>
+            </div>
+        </div>
+
+        <ng-template #chooseDialog>
+            <h1 class="text-center">Choose Dialog</h1>
+        </ng-template>
+    </div>
+</div>

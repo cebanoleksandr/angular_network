@@ -1,0 +1,47 @@
+<div class="profile_info">
+    <div class="profile_main">
+        <div class="profile_ava_block">
+            <img 
+              [src]="profile?.photos.large || 'https://www.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1153673746.jpg'" 
+              class="profile_ava" 
+              alt=""
+            >
+        </div>
+
+        <div class="profile_username">
+            <h1>
+                {{ profile?.fullName }}
+            </h1>
+        </div>
+    </div>
+
+    <div class="description">
+        <p *ngIf="profile?.contacts.lookingForAJobDescription">
+            <strong>About your job: </strong>{{ profile?.contacts.lookingForAJobDescription }}
+        </p>
+        <p *ngIf="profile?.contacts.github">
+            <strong>Github: </strong>{{ profile?.contacts.github }}
+        </p>
+        <p *ngIf="profile?.contacts.vk">
+            <strong>VK: </strong>{{ profile?.contacts.vk }}
+        </p>
+        <p *ngIf="profile?.contacts.facebook">
+            <strong>Facebook:</strong>{{ profile?.contacts.facebook }}
+        </p>
+        <p *ngIf="profile?.contacts.instagram">
+            <strong>Instagram: </strong>{{ profile?.contacts.instagram }}
+        </p>
+        <p *ngIf="profile?.contacts.twitter">
+            <strong>Twitter: </strong>{{ profile?.contacts.twitter }}
+        </p>
+        <p *ngIf="profile?.contacts.website">
+            <strong>Website: </strong>{{ profile?.contacts.website }}
+        </p>
+        <p *ngIf="profile?.contacts.youtube">
+            <strong>YouTube: </strong>{{ profile?.contacts.youtube }}
+        </p>
+        <p *ngIf="profile?.contacts.mainLink">
+            <strong>Mail: </strong>{{ profile?.contacts.mainLink }}
+        </p>
+    </div>
+</div>

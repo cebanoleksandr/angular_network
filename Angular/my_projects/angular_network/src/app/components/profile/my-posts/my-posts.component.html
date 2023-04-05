@@ -1,0 +1,13 @@
+<div class="create_post">
+    <textarea 
+      placeholder="Write your post..."
+      [(ngModel)]="postText"
+    ></textarea>
+
+    <button class="btn btn-success" (click)="addPost()">Add post</button>
+</div>
+
+<div *ngFor="let post of posts">
+    <app-post [post]="post"></app-post>
+</div>
+

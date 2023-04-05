@@ -1,0 +1,27 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    margin-bottom: 10px;
+    background: var(--primary-color);
+
+    img {
+        width: 30px;
+    }
+}
+
+.header_container {
+    max-width: 1200px;
+    overflow: hidden;
+    padding: 10px 0 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    img {
+        width: 30px;
+    }
+}

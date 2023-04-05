@@ -1,0 +1,42 @@
+<div class="user">
+    <div class="user__ava">
+        <div>
+            <a [routerLink]="['/profile', user.id]">
+                <img 
+                  [src]="user.photos.large ? user.photos.large : 'https://www.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1153673746.jpg'" 
+                  alt=""
+                  class="user__photo"
+            >
+            </a>
+        </div>
+
+        <div>
+            <button class="btn btn-success" *ngIf="!user.followed" (click)="follow(user.id)">Follow</button>
+            <button class="btn btn-light" *ngIf="user.followed" (click)="unfollow(user.id)">Unfollow</button>
+        </div>
+    </div>
+
+    <div class="user__info">
+        <div>
+            <a [routerLink]="['/profile', user.id]">
+                <h2>{{ user.name }}</h2>
+            </a>
+            
+            <p *ngIf="user.status">
+                <strong>Status: </strong>
+                {{ user.status }}
+            </p>
+        </div>
+        
+        <div>
+            <p>
+                <strong>Country: </strong>
+                user.location.country 
+            </p>
+            <p>
+                <strong>City: </strong>
+                user.location.city 
+            </p>
+        </div>
+    </div>
+</div>

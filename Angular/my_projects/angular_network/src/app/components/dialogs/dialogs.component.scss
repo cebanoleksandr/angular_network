@@ -1,0 +1,34 @@
+.dialogs {
+    display: flex;
+    height: 100%;
+}
+
+.dialogs_list_container {
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+}
+
+.messages {
+    width: 70%;
+    padding: 10px;
+    background: #ccc;
+}
+
+.messanger {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background: grey;
+}
+
+.messages__field {
+    height: 300px;
+    overflow: auto;
+}
+
+// .messages__enter {
+
+// }

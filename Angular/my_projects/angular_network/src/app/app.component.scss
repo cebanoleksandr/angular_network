@@ -1,0 +1,18 @@
+.app-container {
+    display: grid;
+    grid-template-areas: "n c";
+    grid-template-columns: 2fr 10fr;
+    margin-top: 50px;
+}
+
+.content {
+    grid-area: c;
+    height: 97%;
+    padding: 10px;
+    margin: 10px;
+}
+
+footer {
+    height: 200px;
+    background: var(--primary-color);
+}

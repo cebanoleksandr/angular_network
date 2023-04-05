@@ -1,0 +1,19 @@
+<div class="message" *ngIf="message.id !== 12">
+    <img 
+      [src]="image" 
+      class="message_ava"
+      alt=""
+    >
+
+    {{ message.message }}
+</div>
+
+<div class="my_message" *ngIf="message.id === 12">
+  {{ message.message }}
+
+  <img 
+    src="https://www.pngitem.com/pimgs/m/120-1203486_fitness-sport-man-png-transparent-png.png" 
+    class="message_ava"
+    alt=""
+  >
+</div>

@@ -1,0 +1,34 @@
+// .users {}
+
+.pagination {
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.users__page_number {
+    display: inline-block;
+    margin: 0;
+    padding: 8px 16px;
+    color: #666666;
+    background-color: #ffffff;
+    cursor: pointer;
+    border: 1px solid #d9d9d9;
+    transition: .5s;
+}
+
+.users__page_number:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.users__page_number_active {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}

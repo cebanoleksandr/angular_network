@@ -1,0 +1,52 @@
+<div class="users">
+  <ul class="pagination">
+    <li 
+      class="users__page_number"
+      *ngIf="currentPage !== 1"
+      (click)="changePage(currentPage - 1)"
+    ><strong> &#60; </strong></li>
+
+    <li 
+      class="users__page_number"
+      *ngIf="currentPage > 3"
+      (click)="changePage(1)"
+    >1</li>
+
+    <li 
+      class="users__page_number"
+      *ngIf="currentPage > 3"
+    ><strong>&#8230;</strong></li>
+
+    <li 
+      *ngFor="let pageNumber of pages"
+      class="users__page_number"
+      [ngClass]="{
+        users__page_number_active: currentPage === pageNumber
+      }"
+      (click)="changePage(pageNumber)"
+    >{{ pageNumber }}</li>
+
+    <li 
+      class="users__page_number"
+      *ngIf="currentPage < count - 2"
+    ><strong>&#8230;</strong></li>
+
+    <li 
+      class="users__page_number"
+      *ngIf="currentPage < count - 2"
+      (click)="changePage(count)"
+    >{{ count }}</li>
+
+    <li 
+      class="users__page_number"
+      *ngIf="currentPage !== count"
+      (click)="changePage(currentPage + 1)"
+    ><strong> &#62; </strong></li>
+  </ul>
+
+  <div *ngIf="!isLoading">
+    <app-user *ngFor="let user of users" [user]="user"></app-user>
+  </div>
+
+  <app-loader *ngIf="isLoading"></app-loader>
+</div>

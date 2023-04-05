@@ -1,0 +1,17 @@
+<ul class="dialogs_items">
+  <li class="dialog_item" *ngFor="let dialog of dialogs">
+    <a 
+      [routerLink]="['/dialogs', dialog.id]" 
+      class="dialog_link" 
+      routerLinkActive="active_dialog"
+    >
+      <img 
+        [src]="dialog.image" 
+        class="dialog_item_ava"
+        alt=""
+      >
+
+      {{ dialog.username }}
+    </a>
+  </li>
+</ul>

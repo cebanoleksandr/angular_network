@@ -1,0 +1,30 @@
+.user {
+    display: flex;
+    padding: 1rem;
+    border: 1px dotted #ccc;
+    margin: 0.7rem auto;
+    width: 80%;
+    transition: .5s;
+
+    &:hover {
+        background: rgb(186, 255, 223);
+    }
+}
+
+.user__ava {
+    width: 30%;
+    padding: 10px;
+}
+
+.user__info {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding: 10px;
+}
+
+.user__photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
