@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit {
         console.log(response)
         if (response.resultCode === 0) {
           this.id = response.data.id;
+          this.isAuth = true;
         } else {
           this.id = null;
           this.isAuth = false;

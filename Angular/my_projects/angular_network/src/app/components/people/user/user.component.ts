@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/interfaces/common-interfaces';
 import { PeopleService } from 'src/app/services/people.service';
 
@@ -10,16 +10,27 @@ import { PeopleService } from 'src/app/services/people.service';
 export class UserComponent {
   
   @Input() user!: User;
+  @Input() loadUsers!: Function;
+
+  followed: boolean = this.user?.followed;
 
   constructor(
     private peopleService: PeopleService
   ) {}
 
   follow(id: number) {
-    this.peopleService.addFriend(id);
+    this.peopleService.addFriend(id).subscribe((response) => {
+      if (response.resultCode === 0) {        
+        this.user.followed = true;
+      }
+    })
   }
 
   unfollow(id: number) {
-    this.peopleService.removeFriend(id);
+    this.peopleService.removeFriend(id).subscribe((response) => {
+      if (response.resultCode === 0) {        
+        this.user.followed = false;
+      }
+    })
   }
 }

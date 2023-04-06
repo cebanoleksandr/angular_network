@@ -1,6 +1,6 @@
 <nav class="nav">
     <ul>
-        <li>
+        <li *ngIf="isAuth">
             <a [routerLink]="['/profile', id]" routerLinkActive="active_link">Profile</a>
         </li>
         <li>

@@ -12,14 +12,28 @@ export class PeopleService {
   ) { }
 
   getAll(currentPage: number, pageSize: number) {
-    return this.http.get<UsersResponse>(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${pageSize}`)
+    return this.http.get<UsersResponse>(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${pageSize}`, {
+      withCredentials: true
+    })
   }
 
   addFriend(id: number) {
-    
+    console.log('Add: ', id);
+    return this.http.post<any>(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {}, {
+      withCredentials: true,
+      headers: {
+        "API-KEY": "cd941000-7c4d-4ad0-8431-3c49a2bf1661"
+      }
+    })
   }
 
   removeFriend(id: number) {
-   
+    console.log('Remove: ', id);
+    return this.http.delete<any>(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {
+      withCredentials: true,
+      headers: {
+        "API-KEY": "cd941000-7c4d-4ad0-8431-3c49a2bf1661"
+      }
+    })
   }
 }

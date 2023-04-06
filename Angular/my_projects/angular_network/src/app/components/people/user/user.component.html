@@ -11,8 +11,17 @@
         </div>
 
         <div>
-            <button class="btn btn-success" *ngIf="!user.followed" (click)="follow(user.id)">Follow</button>
-            <button class="btn btn-light" *ngIf="user.followed" (click)="unfollow(user.id)">Unfollow</button>
+            <button 
+              class="btn btn-success"
+              *ngIf="!user.followed"
+              (click)="follow(user.id)"
+            >Follow</button>
+
+            <button 
+              class="btn btn-light"
+              *ngIf="user.followed"
+              (click)="unfollow(user.id)"
+            >Unfollow</button>
         </div>
     </div>
 

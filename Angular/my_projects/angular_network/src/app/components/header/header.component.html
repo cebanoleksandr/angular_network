@@ -1,5 +1,25 @@
 <header>
     <div class="header_container">
         <img src="https://cdn5.vectorstock.com/i/1000x1000/43/79/lion-head-logo-icon-sports-mascot-vector-24034379.jpg" alt="">
+
+        <div class="header_buttons">
+            <button 
+              *ngIf="!isAuth"
+              class="btn btn-success"
+            >Login</button>
+
+            <button 
+              *ngIf="!isAuth"
+              class="btn btn-light"
+            >Registration</button>
+
+            <img 
+              *ngIf="isAuth" 
+              [src]="img"
+              class="header_ava"
+              alt=""
+            >
+            <span class="header_welcome" *ngIf="isAuth">Welcome, {{ userName }}!</span>
+        </div>
     </div>
 </header>
