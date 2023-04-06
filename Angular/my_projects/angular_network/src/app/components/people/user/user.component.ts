@@ -10,7 +10,6 @@ import { PeopleService } from 'src/app/services/people.service';
 export class UserComponent {
   
   @Input() user!: User;
-  @Input() loadUsers!: Function;
 
   followed: boolean = this.user?.followed;
 

@@ -45,7 +45,7 @@
   </ul>
 
   <div *ngIf="!isLoading">
-    <app-user *ngFor="let user of users" [user]="user" [loadUsers]="loadUsers"></app-user>
+    <app-user *ngFor="let user of users" [user]="user"></app-user>
   </div>
 
   <app-loader *ngIf="isLoading"></app-loader>
