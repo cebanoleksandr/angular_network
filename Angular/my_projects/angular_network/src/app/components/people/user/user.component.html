@@ -14,12 +14,14 @@
             <button 
               class="btn btn-success"
               *ngIf="!user.followed"
+              [disabled]="isFetching"
               (click)="follow(user.id)"
             >Follow</button>
 
             <button 
               class="btn btn-light"
               *ngIf="user.followed"
+              [disabled]="isFetching"
               (click)="unfollow(user.id)"
             >Unfollow</button>
         </div>
