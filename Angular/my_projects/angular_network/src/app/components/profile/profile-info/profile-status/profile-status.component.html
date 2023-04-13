@@ -1,0 +1,19 @@
+<div *ngIf="!status && !isEdit" (dblclick)="activateEdit()">
+  You can write your status dobleclicking here...
+</div>
+
+<p 
+  *ngIf="!isEdit && status"
+  (dblclick)="activateEdit()"
+>
+  <strong>Status: </strong>{{ status }}
+</p>
+
+<input 
+  *ngIf="isEdit" 
+  type="text" 
+  autofocus
+  placeholder="Create your status..."
+  (blur)="deActivateEdit()"
+  [(ngModel)]="status"
+>

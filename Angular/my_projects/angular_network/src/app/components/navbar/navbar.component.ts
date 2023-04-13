@@ -18,7 +18,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.authService.getCurrentUser()
       .subscribe(response => {
-        console.log(response)
         if (response.resultCode === 0) {
           this.id = response.data.id;
           this.isAuth = true;

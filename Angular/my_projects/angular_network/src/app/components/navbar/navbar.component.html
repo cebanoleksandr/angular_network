@@ -3,16 +3,19 @@
         <li *ngIf="isAuth">
             <a [routerLink]="['/profile', id]" routerLinkActive="active_link">Profile</a>
         </li>
+        <li *ngIf="!isAuth">
+            <a [routerLink]="['/login']" routerLinkActive="active_link">Login</a>
+        </li>
         <li>
             <a [routerLink]="['/news']" routerLinkActive="active_link">News</a>
         </li>
-        <li>
+        <li *ngIf="isAuth">
             <a [routerLink]="['/dialogs']" routerLinkActive="active_link">Messages</a>
         </li>
         <li>
             <a [routerLink]="['/people']" routerLinkActive="active_link">People</a>
         </li>
-        <li>
+        <li *ngIf="isAuth">
             <a [routerLink]="['/friends']" routerLinkActive="active_link">Friends</a>
         </li>
         <li>

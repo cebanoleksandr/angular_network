@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
@@ -10,10 +11,13 @@ import { ProfileService } from 'src/app/services/profile.service';
 export class ProfileInfoComponent implements OnInit {
   
   profile!: any;
+  myId!: number | null;
+  status!: string | null;
 
   constructor(
     private route: ActivatedRoute,
-    private profileService: ProfileService
+    private profileService: ProfileService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -21,6 +25,17 @@ export class ProfileInfoComponent implements OnInit {
       this.profileService.getProfile(+params['id']).subscribe((response) => {
         this.profile = response;
       })
+      this.profileService.getStatus(+params['id']).subscribe((response) => {
+        this.status = response;
+      })
     })
+    this.authService.getCurrentUser()
+      .subscribe(response => {
+        if (response.resultCode === 0) {
+          this.myId = response.data.id;
+        } else {
+          this.myId = null;
+        }
+      })
   }
 }

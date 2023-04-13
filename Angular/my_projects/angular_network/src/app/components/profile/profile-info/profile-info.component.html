@@ -12,6 +12,15 @@
             <h1>
                 {{ profile?.fullName }}
             </h1>
+            
+            <app-profile-status 
+              *ngIf="profile?.userId === myId"
+              [status]="status"
+            ></app-profile-status>
+
+            <p *ngIf="profile?.userId !== myId && status">
+                <strong>Status: </strong>{{ status }}
+            </p>
         </div>
     </div>
 

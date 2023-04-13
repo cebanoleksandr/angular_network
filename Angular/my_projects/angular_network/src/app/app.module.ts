@@ -23,6 +23,7 @@ import { ProfileInfoComponent } from './components/profile/profile-info/profile-
 import { UserComponent } from './components/people/user/user.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfileStatusComponent } from './components/profile/profile-info/profile-status/profile-status.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { LoginComponent } from './components/login/login.component';
     ProfileInfoComponent,
     UserComponent,
     LoaderComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileStatusComponent
   ],
   imports: [
     BrowserModule,
