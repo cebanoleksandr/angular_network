@@ -18,8 +18,11 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): boolean | Observable<boolean> | Promise<boolean> {
     let isAuth!: boolean;
-    this.authService.getCurrentUser().subscribe((response) => {
-      if (response.resultCode === 0) {
+    
+    this.authService.getCurrentUser();
+
+    this.authService.currentUser$.subscribe((user) => {
+      if (user) {
         isAuth = true;
       } else {
         isAuth = false;

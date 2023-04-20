@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AuthServiceData } from '../interfaces/common-interfaces';
+import { AuthServiceData, CurrentUser } from '../interfaces/common-interfaces';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  currentUserSubject = new Subject<CurrentUser | null>();
+  currentUser$ = this.currentUserSubject.asObservable();
+
   constructor(
     private http: HttpClient
   ) { }
@@ -13,7 +17,13 @@ export class AuthService {
   getCurrentUser() {
     return this.http.get<AuthServiceData>(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
       withCredentials: true
-    });
+    }).subscribe(response => {
+      if (response.resultCode === 0) {
+        this.currentUserSubject.next(response.data);
+      } else {
+        this.currentUserSubject.next(null);
+      }
+    })
   }
 
   login(user: any) {

@@ -44,8 +44,11 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(user).subscribe(response => {
       if (response.resultCode === 0) {
-        this.authService.getCurrentUser().subscribe(res => {
-          if (res.resultCode === 0) {
+        this.authService.getCurrentUser();
+        
+        this.authService.currentUser$.subscribe(res => {
+          console.log(res)
+          if (res) {
             this.router.navigate(['/news']);
           } else {
             console.log('One more error')

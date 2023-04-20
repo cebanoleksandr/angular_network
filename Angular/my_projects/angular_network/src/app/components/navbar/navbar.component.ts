@@ -16,15 +16,16 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.authService.getCurrentUser()
-      .subscribe(response => {
-        if (response.resultCode === 0) {
-          this.id = response.data.id;
-          this.isAuth = true;
-        } else {
-          this.id = null;
-          this.isAuth = false;
-        }
-      })
+    this.authService.getCurrentUser();
+
+    this.authService.currentUser$.subscribe(user => {
+      if (user) {
+        this.id = user.id;
+        this.isAuth = true;
+      } else {
+        this.id = null;
+        this.isAuth = false;
+      }
+    })
   }
 }

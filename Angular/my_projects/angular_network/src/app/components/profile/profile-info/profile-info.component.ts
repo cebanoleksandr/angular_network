@@ -29,13 +29,13 @@ export class ProfileInfoComponent implements OnInit {
         this.status = response;
       })
     })
-    this.authService.getCurrentUser()
-      .subscribe(response => {
-        if (response.resultCode === 0) {
-          this.myId = response.data.id;
-        } else {
-          this.myId = null;
-        }
-      })
+    this.authService.getCurrentUser();
+    this.authService.currentUser$.subscribe(user => {
+      if (user) {
+        this.myId = user.id;
+      } else {
+        this.myId = null;
+      }
+    })
   }
 }
