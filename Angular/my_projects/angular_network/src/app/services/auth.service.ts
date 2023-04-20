@@ -6,12 +6,6 @@ import { AuthServiceData } from '../interfaces/common-interfaces';
   providedIn: 'root'
 })
 export class AuthService {
-
-  id: number | null = null;
-  email: string | null = null;
-  login: string | null = null;
-  isAuth: boolean = false;
-
   constructor(
     private http: HttpClient
   ) { }
@@ -20,5 +14,23 @@ export class AuthService {
     return this.http.get<AuthServiceData>(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
       withCredentials: true
     });
+  }
+
+  login(user: any) {
+    return this.http.post<any>(`https://social-network.samuraijs.com/api/1.0/auth/login`, user, {
+      withCredentials: true,
+      headers: {
+        "API-KEY": "cd941000-7c4d-4ad0-8431-3c49a2bf1661"
+      }
+    })
+  }
+
+  logout() {
+    return this.http.delete<any>(`https://social-network.samuraijs.com/api/1.0/auth/login`, {
+      withCredentials: true,
+      headers: {
+        "API-KEY": "cd941000-7c4d-4ad0-8431-3c49a2bf1661"
+      }
+    })
   }
 }

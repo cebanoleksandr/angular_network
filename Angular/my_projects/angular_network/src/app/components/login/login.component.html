@@ -1,1 +1,41 @@
-<p>login works!</p>
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+  <h2 class="text-center">Login</h2>
+
+  <div class="form-control" [ngClass]="{invalid: form.get('email')?.touched && form.get('email')?.invalid}">
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Email" formControlName="email">
+    <div class="validation" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+      <small *ngIf="form.get('email')?.getError('required')">
+        Email field shouldn't be empty
+      </small>
+      <small *ngIf="form.get('email')?.getError('email')">
+        Enter the correct email
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control" [ngClass]="{invalid: form.get('password')?.touched && form.get('password')?.invalid}">
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Password" formControlName="password">
+    <div class="validation" *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+      <small *ngIf="form.get('password')?.getError('required')">
+        Password field shouldn't be empty
+      </small>
+      <small *ngIf="form.get('password')?.getError('minlength')">
+        Password should be at least {{form.get('password')?.getError('minlength').requiredLength}} characters.
+        Now there is {{form.get('password')?.getError('minlength').actualLength}} characters
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <input type="checkbox" id="rememberMe" formControlName="rememberMe">
+    <label for="rememberMe"> Remember me</label>
+  </div>
+
+  <button 
+    type="submit"
+    class="btn btn-danger"
+    [disabled]="form.invalid"
+  >Log in</button>
+</form>
