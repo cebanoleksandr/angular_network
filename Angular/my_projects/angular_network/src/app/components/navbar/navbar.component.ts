@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from "../../services/auth.service";
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,25 +7,24 @@ import { AuthService } from "../../services/auth.service";
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-  id!: number | null;
-  isAuth!: boolean;
+  public id!: number | null;
+  public isAuth!: boolean;
 
   constructor(
     private authService: AuthService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
-    this.authService.getCurrentUser();
-
-    this.authService.currentUser$.subscribe(user => {
-      if (user) {
+    this.authService.authData.subscribe(authData => {
+      const user = authData.data;
+      if (user?.id) {
         this.id = user.id;
         this.isAuth = true;
       } else {
         this.id = null;
         this.isAuth = false;
       }
-    })
+    });
   }
 }

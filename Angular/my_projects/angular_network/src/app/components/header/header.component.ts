@@ -24,16 +24,14 @@ export class HeaderComponent implements OnInit {
   }
 
   getCurrentUser() {
-    this.authService.getCurrentUser();
-
-    this.authService.currentUser$.subscribe(user => {
-      console.log('headercomponent', user)
-      if (user) {
+    this.authService.authData.subscribe(data => {
+      const user = data.data;
+      if (user?.id) {
         this.id = user.id;
         this.isAuth = true;
         this.profileService.getProfile(this.id).subscribe((response: any) => {
           this.img = response?.photos.large || 'https://www.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1153673746.jpg';
-            
+
           this.userName = response?.fullName;
         })
       } else {
@@ -46,7 +44,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.authService.logout().subscribe(response => {
       if (response.resultCode === 0) {
-        this.getCurrentUser();
+        this.authService.initCurrentUser();
       }
     })
   }

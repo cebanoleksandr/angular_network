@@ -18,7 +18,6 @@ export class PeopleService {
   }
 
   addFriend(id: number) {
-    console.log('Add: ', id);
     return this.http.post<any>(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {}, {
       withCredentials: true,
       headers: {
@@ -28,7 +27,6 @@ export class PeopleService {
   }
 
   removeFriend(id: number) {
-    console.log('Remove: ', id);
     return this.http.delete<any>(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {
       withCredentials: true,
       headers: {
