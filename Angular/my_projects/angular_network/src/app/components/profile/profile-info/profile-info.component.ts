@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProfileService } from 'src/app/services/profile.service';
-import {AuthServiceData, CurrentUser} from '../../../interfaces/common-interfaces';
+import { CurrentUser } from '../../../interfaces/common-interfaces';
 
 @Component({
   selector: 'app-profile-info',
@@ -29,7 +29,7 @@ export class ProfileInfoComponent implements OnInit {
         this.status = response;
       })
     });
-    this.authService.authData.subscribe((authData: AuthServiceData) => {
+    this.authService.authData.subscribe(authData => {
       const user: CurrentUser = authData.data;
       if (user?.id) {
         this.myId = user.id;

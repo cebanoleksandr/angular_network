@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
       if (user?.id) {
         this.id = user.id;
         this.isAuth = true;
-        this.profileService.getProfile(this.id).subscribe((response: any) => {
+        this.profileService.getProfile(this.id).subscribe(response => {
           this.img = response?.photos.large || 'https://www.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1153673746.jpg';
 
           this.userName = response?.fullName;

@@ -20,11 +20,13 @@ export class ProfileStatusComponent {
   }
 
   deActivateEdit(): void {
-    this.profileService.setStatus(this.status).subscribe((response: any) => {
+    this.profileService.setStatus(this.status).subscribe(response => {
+      this.isEdit = false;
+      
       if (response.resultCode === 0) {
-        this.isEdit = false;
+        // this.isEdit = false;
       } else {
-        this.isEdit = false;
+        // this.isEdit = false;
       }
     })
   }

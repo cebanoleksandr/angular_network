@@ -20,8 +20,8 @@ export class AuthService {
       });
   }
 
-  login(user: UserLogin): Observable<any> {
-    return this.http.post<any>(`https://social-network.samuraijs.com/api/1.0/auth/login`, user, {
+  login(user: UserLogin): Observable<AuthServiceData> {
+    return this.http.post<AuthServiceData>(`https://social-network.samuraijs.com/api/1.0/auth/login`, user, {
       withCredentials: true,
       headers: {
         "API-KEY": "cd941000-7c4d-4ad0-8431-3c49a2bf1661"
@@ -29,8 +29,8 @@ export class AuthService {
     });  //todo specify type
   }
 
-  logout(): Observable<any> {
-    return this.http.delete<any>(`https://social-network.samuraijs.com/api/1.0/auth/login`, {
+  logout(): Observable<AuthServiceData> {
+    return this.http.delete<AuthServiceData>(`https://social-network.samuraijs.com/api/1.0/auth/login`, {
       withCredentials: true,
       headers: {
         "API-KEY": "cd941000-7c4d-4ad0-8431-3c49a2bf1661"
