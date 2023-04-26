@@ -8,25 +8,23 @@ import { ProfileService } from 'src/app/services/profile.service';
 })
 export class ProfileStatusComponent {
 
-  @Input() status!: string | null;
+  @Input() status!: string;
   isEdit = false;
 
   constructor(
     private profileService: ProfileService
   ) {}
 
-  activateEdit() {
+  activateEdit(): void {
     this.isEdit = true;
   }
 
-  deActivateEdit() {
+  deActivateEdit(): void {
     this.profileService.setStatus(this.status).subscribe((response: any) => {
       if (response.resultCode === 0) {
         this.isEdit = false;
-        console.log('Status was updated!!!');
       } else {
         this.isEdit = false;
-        console.log(response.messages.join(' '));
       }
     })
   }

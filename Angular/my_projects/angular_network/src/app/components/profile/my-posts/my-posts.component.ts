@@ -8,9 +8,8 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./my-posts.component.scss']
 })
 export class MyPostsComponent implements OnInit {
-
-  posts!: Post[];
-  postText = '';
+  public posts!: Post[];
+  public postText = '';
 
   constructor(private postsService: PostsService) {}
 
@@ -18,7 +17,7 @@ export class MyPostsComponent implements OnInit {
     this.posts = this.postsService.getAll();
   }
 
-  addPost() {
+  addPost(): void {
     if (!this.postText.trim()) return;
 
     const newPost: Post = {

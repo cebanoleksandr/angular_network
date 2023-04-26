@@ -20,6 +20,13 @@ export interface User {
     followed: boolean
 }
 
+export interface UserLogin {
+  email: string,
+  password: string,
+  rememberMe: boolean,
+  capture?: string
+}
+
 export interface UsersResponse {
     items: User[]
     totalCount: number
